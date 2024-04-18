@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The One's Home Page</title>
+    <style>
+        body {
+            background-color: #000; /* Set background color to black */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            height: 100vh; /* Make body fill the viewport height */
+            display: flex; /* Use flexbox for centering content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
 
+        /* Create a starry effect using CSS gradients */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(white 2%, transparent 2.5%), radial-gradient(white 2%, transparent 2.5%), radial-gradient(white 1%, transparent 1.5%), radial-gradient(white 1%, transparent 1.5%);
+            background-position: 0 0, 40px 40px, 25px 25px, 60px 60px;
+            background-size: 80px 80px, 80px 80px, 40px 40px, 40px 40px;
+        }
+
+        /* Style for the content */
+        .content {
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to The One's Home Page</h1>
+        <p>Where intellect and innovation reign supreme.</p>
+    </div>
+</body>
+</html>
