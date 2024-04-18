@@ -6,20 +6,15 @@ toggleButton.addEventListener('change', function() {
         document.body.style.backgroundColor = 'red';
         // Check if the device supports vibration
         if ("vibrate" in navigator) {
-            // Vibrate phone when button is pressed
-            navigator.vibrate([100]);
-            // Continuously vibrate phone when button is on
-            const vibrationInterval = setInterval(() => {
-                navigator.vibrate([100]);
-            }, 1000);
-            // Store the interval ID to clear it later
-            this.dataset.vibrationInterval = vibrationInterval;
+            // Define custom vibration pattern (modify as needed)
+            const vibrationPattern = [1000, 100, 500, 200, 1000]; // Example pattern: 1 second, short pause, 0.5 second, short pause, 1 second
+            // Vibrate phone with the custom pattern
+            navigator.vibrate(vibrationPattern);
         }
     } else {
         // Change background color to blue when off
         document.body.style.backgroundColor = 'blue';
-        // Stop continuous vibration
-        const vibrationInterval = parseInt(this.dataset.vibrationInterval);
-        clearInterval(vibrationInterval);
+        // Stop vibration when button is turned off
+        navigator.vibrate(0);
     }
 });
